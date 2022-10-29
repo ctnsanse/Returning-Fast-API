@@ -9,5 +9,10 @@ templates = Jinja2Templates(directory="templates")
 
 @app.get('/index', response_class=HTMLResponse)
 def index(request: Request):
-    context = {'request' : Request}
+    films = [
+        {'name': 'gg', 'directeur':'dd'},
+        {'name': 'gg', 'directeur':'dd'},
+        {'name': 'gg', 'directeur':'dd'},
+    ]
+    context = {'request' : request}
     return templates.TemplateResponse('index.html', context)
